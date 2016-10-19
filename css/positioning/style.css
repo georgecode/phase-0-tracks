@@ -1,0 +1,25 @@
+main{
+  margin-top: 50px;
+}
+img{
+  display:block;
+  margin:0 auto;
+}
+
+.hat{
+position: relative;
+z-index: 100;
+
+}
+
+.octopus{
+position:relative;
+top:-102px;
+right:17px;
+}
+
+.glasses{
+position:relative;
+top:-292px;
+right:11px;
+}
