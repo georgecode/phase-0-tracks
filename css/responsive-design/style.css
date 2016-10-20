@@ -1,8 +1,25 @@
 body{
-  width: 960px;
+  /*width: 960px;*/
+  max-width:960px;
+  margin: 0 auto;
 }
-#external-links{
 
+main{
+  width:80%;
+  display: table-cell;
+  position: relative;
+  vertical-align:top;
+  padding: 10px;
+}
+
+#external-links{
+  width:20%;
+  position: relative;
+  display: table-cell;
+  /*float:right;*/
+  vertical-align:top;
+  min-width: 188px;
+  padding: 10px;
 }
 
 blockquote {
@@ -36,4 +53,30 @@ figure {
 figcaption {
   font-style: italic;
   text-align: right;
+}
+
+@media screen and (max-width: 500px) {
+  body {background-color: hotpink;
+  }
+  main{
+    width:96%;
+    margin-right:2%;
+    display:block;
+  }
+  #external-links{
+    width: 100%;
+    display:block;
+  }
+}
+
+@media screen and (max-width: 300px){
+  #external-links h1{
+    font-size: 0.5em;
+  }
+  #external-links ul{
+    font-size: 0.35em;
+  }
+  #external-links{
+    text-align: center;
+  }
 }
