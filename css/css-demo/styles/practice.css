@@ -9,7 +9,21 @@
   margin-bottom: 15px;
 }
 
+/*Cascading Style example uses this rule*/
 
+.accomp{
+  font-size: 500px;
+  font-size: .8em;
+}
+/*sudo example*/
+li:hover{
+  color:red;
+}
+
+/*child element  of another element example*/
+section li{
+  color:green;
+}
 
 
 
