@@ -35,3 +35,5 @@ if name == "Drake Cula" || name == "Tu Fang"
 end
 
 puts responce
+
+puts "How many employees will be processed??"
