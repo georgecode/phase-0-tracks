@@ -1,0 +1,56 @@
+#Elevator
+while not equal to yes
+  Are you by an elevator yes/no?
+      If not equal to yes go to elevator.
+
+while not equal to yes
+  Is the door open yes/no?
+    If no hit the open button.
+
+while x not equal to number
+  Please enter floor number?
+    If not a number
+      That’s not a number please enter a number.
+    Else
+      Going to floor number x please wait.
+
+Delay
+You’ve arrived at floor number x thanks for using our elevator!
+
+
+#Putting on a wet suit
+while not equal to yes
+  Are you’re clothes off?
+    If yes
+      please put on wetsuit.
+    Else
+      please take your clothes off.
+
+while not equal to no
+  Is your wet suit inside out yes/no?
+    If yes
+      Please turn wetsuit right side in
+    Else
+      Good, please put wet suit on.
+
+Delay
+
+while not equal to yes
+  Is your wet suit on yes/no?
+    If yes
+      Cool, please zip it up.
+
+while not equal to yes
+  Are you done zipping yes/no??
+    If yes
+      Good, please roll the legs of your wet suit up.
+
+while not equal to yes
+  Are the legs of your wetsuit rolled up?
+    If yes
+      Excellent we are almost there please put your booties on.
+
+while not equal to yes
+  Are your booties on yes/no?
+    If yes
+      Awesome you are done putting your wet suit on go enjoy the water!
