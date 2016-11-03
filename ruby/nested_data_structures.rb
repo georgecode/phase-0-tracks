@@ -1,4 +1,5 @@
 zombie_town_video_game = {
+  #for this data arrays were easier to read as a single line
   pharmacy:{
     drugs:["Penicillin","Aspirin", "Imodium", "Morphine" ,"Amoxicillin"],
     food:["candy bars","chips"],
@@ -75,5 +76,4 @@ p zombie_town_video_game[:church][:drugs]
 
 #finally eat all the mac and cheese at the church you deserve it you fought good today and show that it's gone
 zombie_town_video_game[:church][:food].delete("mac n cheese")
-
 p zombie_town_video_game[:church][:food]
