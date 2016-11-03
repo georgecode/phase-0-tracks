@@ -7,4 +7,10 @@ sigil = {
   grey_joy: "Kraken"
 }
 
+game_of_thrones.each do |name|
+  puts "#{name} is probably going to die!"
+end
 
+game_of_thrones.map! do |name|
+  name = name
+end
