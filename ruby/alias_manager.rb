@@ -16,12 +16,18 @@ def change_name(name)
 
   #change all consonant's
   name = name.downcase.split('').map do |l|
-    if l == " " || l == "a" || l == "e" || l== "i" || l=="o" ||l=="u"
+    #.match(/[a-zA-Z]/)
+    # if l == " " || l == "a" || l == "e" || l== "i" || l=="o" ||l=="u"
+    if l.match(/[a,e,i,o,u,\s]/)
       l = l
+      #account for edge case
+    elsif l == "z"
+      l = "b"
     else
       l = l.next
       #fixes consonant's that changed into vowels
-      if l == "a" || l == "e" || l== "i" || l=="o" ||l=="u"
+      #if l == "a" || l == "e" || l== "i" || l=="o" ||l=="u"
+      if l.match(/[a,e,i,o,u]/)
         l.next
       else
         l = l
@@ -29,12 +35,34 @@ def change_name(name)
       #
     end
   end
-#create hash for vowles
-  p name.join('')
+
+  p name
+
+
+#Loop through vowles
+  for i in 0..name.length()-1
+    case name[i]
+      when "a"
+        name[i] = "e"
+      when "e"
+        name[i] = "i"
+      when "i"
+        name[i] = "o"
+      when "o"
+        name[i] = "u"
+      when "u"
+        name[i] = "a"
+      # else
+      #   name[i] = name[i]
+    end
+  end
+p name
+p name.join()
 
 end
 
-change_name("BOB builder")
+change_name("BOBz builder")
+change_name("aaa eeeee BBB ZZ")
 
 
 
