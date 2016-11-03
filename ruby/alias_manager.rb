@@ -8,6 +8,33 @@
 #change consonants first with .next unless vowel
 # make arry of vowles split name change vowels by advancing with the vowel array
 
+def change_name(name)
+  # swapes names
+  name = name.split(' ').reverse.join(' ')
+  puts name
+  p name.split('')
+
+  #change all consonant's
+  name = name.downcase.split('').map do |l|
+    if l == " " || l == "a" || l == "e" || l== "i" || l=="o" ||l=="u"
+      l = l
+    else
+      l = l.next
+      #fixes consonant's that changed into vowels
+      if l == "a" || l == "e" || l== "i" || l=="o" ||l=="u"
+        l.next
+      else
+        l = l
+      end
+      #
+    end
+  end
+#create hash for vowles
+  p name.join('')
+
+end
+
+change_name("BOB builder")
 
 
 
