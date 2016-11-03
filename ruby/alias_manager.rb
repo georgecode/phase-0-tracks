@@ -57,12 +57,15 @@ def change_name(name)
     end
   end
 p name
-p name.join()
-
+name = name.join()
+p name
+name = name.split.map(&:capitalize).join(' ')
+p name
 end
 
 change_name("BOBz builder")
 change_name("aaa eeeee BBB ZZ")
+change_name("Felicia Torres")
 
 
 
