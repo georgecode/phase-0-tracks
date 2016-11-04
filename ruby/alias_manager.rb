@@ -40,22 +40,32 @@ def change_name(name)
         name[i] = "u"
       when "u"
         name[i] = "a"
-
     end
   end
 name = name.join()
 name = name.split.map(&:capitalize).join(' ')
-p name
+puts name
+name
 end
-#test function
-# change_name("BOBz builder")
-# change_name("aaa eeeee BBB ZZ")
-# change_name("Felicia Torres")
 
+#test function
+# p change_name("BOBz builder")
+# p change_name("aaa eeeee BBB ZZ")
+# p change_name("Felicia Torres")
+
+#prompt users and print names and aliases
+name_hash ={}
 agent_name = ""
-#puts "Enter agent name"
+
 while agent_name !="quit"
-  puts "Enter agent name"
+  puts "Enter agent name or type quit to exit"
   agent_name = gets.chomp
-  change_name(agent_name)
+  if agent_name == "quit"
+      #loop through hash and print names
+      name_hash.each do |value|
+      puts "#{value[0]} is also known as #{value[1]}"
+    end
+  else
+    name_hash[agent_name] = change_name(agent_name)
+  end
 end
