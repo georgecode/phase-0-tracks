@@ -44,19 +44,35 @@ end
 
 
 # drive code
-food_list = create_list("apples oranges bananas beans chips juice")
+food_list = create_list("")
 
-p food_list
+#p food_list
 
 def add_item(food_list, new_food, qty_num = 1)
   food_list[new_food.to_sym] = qty_num
-  p food_list
+  food_list
 end
 
 def remove_item(food_list, food_remove)
   food_list.delete(food_remove.to_sym)
-  p food_list
+  food_list
 end
 
-remove_item(food_list, "bananas")
-add_item(food_list, "beer")
+def update_item(food_list, food, qty_num)
+  food_list[food.to_sym] = qty_num
+  food_list
+end
+
+def pretty_list(food_list)
+  food_list.each do |food, qty|
+    puts "#{food}: #{qty}"
+  end
+end
+
+add_item(food_list, "lemonade", 2)
+add_item(food_list, "tomatoes", 3)
+add_item(food_list, "onions", 1)
+add_item(food_list, "ice cream", 4)
+remove_item(food_list, "lemonade")
+update_item(food_list, "ice cream", 1)
+pretty_list(food_list)
