@@ -76,3 +76,31 @@ add_item(food_list, "ice cream", 4)
 remove_item(food_list, "lemonade")
 update_item(food_list, "ice cream", 1)
 pretty_list(food_list)
+
+
+
+# What did you learn about pseudocode from working on this challenge?
+#It's a goldilocks art form not too little not too much
+
+# What are the tradeoffs of using arrays and hashes for this challenge?
+# We techinically used both .split(" ") created an array and we stored the data
+# in a hash from there, so we got the best of both worlds
+
+# What does a method return?
+# The last result before it's end
+
+# What kind of things can you pass into methods as arguments?
+# variables, strings, boolens, and numbers
+
+# How can you pass information between methods?
+# In this exercise we passed a method into another method by
+# saving the method to be passed as a variable
+
+# What concepts were solidified in this challenge, and what concepts are still confusing?
+# The coolest thing I learned in this challange was the abilty to set a default to a parameters.
+# I wouldn't say im confused about anything more like disapointed in ruby for not
+# letting me access a hash outside of a method and the flunkyness of explicit return
+# (the more i get to know ruby, the fonder i become of javascript)
+
+
+
