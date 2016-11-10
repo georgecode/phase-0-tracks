@@ -1,6 +1,6 @@
 class Santa
-  attr_reader :age, :ethnicity
-  attr_accessor :gender
+  attr_reader :ethnicity, :reindeer_ranking
+  attr_accessor :gender, :age
 
   def speak
     p "Ho, ho, ho! Haaaappy holidays!"
@@ -29,53 +29,50 @@ class Santa
     @reindeer_ranking << @reindeer_ranking.delete(deer_name)
   end
 
+end#------end Santa class
 
-end
-
-# test code
+# test code was not sure if i was supose to get rid of this so i kept it just incase
 # jingles = Santa.new()
 # jingles.speak
 # jingles.eat_milk_and_cookies("sugar cookie")
 
 
-# function to print tests
-def tester(santas)
-  puts "\n-------------------------\n"
-  p santas[0]
-end
+genders =["Cisgender","Androgyne","Nonconforming", "Transpecies","agender", "female","bigender","male", "gender free","gender fluid","N/A",]
 
+ethnicity =["Native Hawaiian", "Native American", "Aboriginal", "Gerald Broflovski(dolphin)","black","Latino","white","Japanese", "prefer not to say","Mystical Creature (unicorn)","N/A"]
 
-#test code
+# create new santa array
 santas = []
-# santas << Santa.new("agender", "black")
-# santas << Santa.new("female", "Latino")
-# santas << Santa.new("bigender", "white")
-# santas << Santa.new("male", "Japanese")
-# santas << Santa.new("female", "prefer not to say")
-# santas << Santa.new("gender fluid", "Mystical Creature (unicorn)")
-# santas << Santa.new("N/A", "N/A")
 
+#create a shitload of santas and randomyly select from arrays
+150.times {
+  santas << Santa.new(genders.shuffle[0], ethnicity.shuffle[0])
+}
 
-# Add some diverse initializations as driver code with a loop
-genders =["Cisgender","Androgyne","Nonconforming", "Transpecies"]
-ethnicity =["Native Hawaiian", "Native American", "Aboriginal", "Gerald Broflovski(dolphin)"]
-
-genders.length.times do |i|
-  santas << Santa.new(genders[i], ethnicity[i])
-end
-
-# Prettyer santa print out (still kinda ugly but readable enough for tests)
+#random age between 0 and 140
 santas.each do |santa|
-  p santa
-  puts "\n-------------------------\n"
+  santa.age = rand(140)
+end
+
+#print out the attributes of each Santa
+santas.each do |santa|
+  puts "\nThis Santas Information"
+  puts "\nGender: #{santa.gender}"
+  puts "Ethnicity: #{santa.ethnicity}"
+  puts "Age: #{santa.age}"
+  puts "Reindeer ranking: #{santa.reindeer_ranking}"
+  puts "\n\n-------------------------"
 end
 
 
-# function to print tests
-def tester(santas)
-  puts "\n-------------------------\n"
-  p santas[0]
-end
+
+
+# # function to print tests
+# #(***MUST UN-COMMENT FOR BELOW TESTS TO WORK***)
+# def tester(santas)
+#   puts "\n-------------------------\n"
+#   p santas[0]
+# end
 
 # Test birthday
 # tester(santas)
@@ -88,12 +85,11 @@ end
 # tester(santas)
 
 #test gender changer
-tester(santas)
-santas[0].gender = "male"
-tester(santas)
+# tester(santas)
+# santas[0].gender = "male"
+# tester(santas)
 
 #Test age and ethnicity
 # tester(santas)
 # p santas[0].age
 # p santas[0].ethnicity
-
