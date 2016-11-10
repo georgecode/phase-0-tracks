@@ -1,4 +1,6 @@
 class Santa
+  attr_reader :age, :ethnicity
+  attr_accessor :gender
 
   def speak
     p "Ho, ho, ho! Haaaappy holidays!"
@@ -10,13 +12,13 @@ class Santa
 
   # def initialize()
  def initialize(gender, ethnicity)
-    #These things with the @ are attributes
     @gender = gender
     @ethnicity = ethnicity
     @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
     @age = 0
     p "Initializing Santa instance ..."
   end
+
   # add 1 year to santas age
   def celebrate_birthday
     @age += 1
@@ -26,20 +28,6 @@ class Santa
   def get_mad_at(deer_name)
     @reindeer_ranking << @reindeer_ranking.delete(deer_name)
   end
-  # setter method for attributes new gender
-  def new_gender=(new_gender)
-    @gender = new_gender
-  end
-
-  # getter method for attributes age
-  def age
-    @age
-  end
-  # getter method for attributes ethnicity
-  def ethnicity
-    @ethnicity
-  end
-
 
 
 end
@@ -59,13 +47,13 @@ end
 
 #test code
 santas = []
-santas << Santa.new("agender", "black")
-santas << Santa.new("female", "Latino")
-santas << Santa.new("bigender", "white")
-santas << Santa.new("male", "Japanese")
-santas << Santa.new("female", "prefer not to say")
-santas << Santa.new("gender fluid", "Mystical Creature (unicorn)")
-santas << Santa.new("N/A", "N/A")
+# santas << Santa.new("agender", "black")
+# santas << Santa.new("female", "Latino")
+# santas << Santa.new("bigender", "white")
+# santas << Santa.new("male", "Japanese")
+# santas << Santa.new("female", "prefer not to say")
+# santas << Santa.new("gender fluid", "Mystical Creature (unicorn)")
+# santas << Santa.new("N/A", "N/A")
 
 
 # Add some diverse initializations as driver code with a loop
@@ -77,10 +65,10 @@ genders.length.times do |i|
 end
 
 # Prettyer santa print out (still kinda ugly but readable enough for tests)
-# santas.each do |santa|
-#   p santa
-#   puts "-----------------"
-# end
+santas.each do |santa|
+  p santa
+  puts "\n-------------------------\n"
+end
 
 
 # function to print tests
@@ -100,12 +88,12 @@ end
 # tester(santas)
 
 #test gender changer
-# tester(santas)
-# santas[0].new_gender = "male"
-# tester(santas)
+tester(santas)
+santas[0].gender = "male"
+tester(santas)
 
 #Test age and ethnicity
-tester(santas)
-p santas[0].age
-p santas[0].ethnicity
+# tester(santas)
+# p santas[0].age
+# p santas[0].ethnicity
 
