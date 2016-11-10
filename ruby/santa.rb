@@ -1,4 +1,5 @@
 class Santa
+
   def speak
     p "Ho, ho, ho! Haaaappy holidays!"
   end
@@ -16,12 +17,44 @@ class Santa
     @age = 0
     p "Initializing Santa instance ..."
   end
+  # add 1 year to santas age
+  def celebrate_birthday
+    @age += 1
+  end
+
+  # move deer to last place
+  def get_mad_at(deer_name)
+    @reindeer_ranking << @reindeer_ranking.delete(deer_name)
+  end
+  # setter method for attributes new gender
+  def new_gender=(new_gender)
+    @gender = new_gender
+  end
+
+  # getter method for attributes age
+  def age
+    @age
+  end
+  # getter method for attributes ethnicity
+  def ethnicity
+    @ethnicity
+  end
+
+
+
 end
 
 # test code
 # jingles = Santa.new()
 # jingles.speak
 # jingles.eat_milk_and_cookies("sugar cookie")
+
+
+# function to print tests
+def tester(santas)
+  puts "\n-------------------------\n"
+  p santas[0]
+end
 
 
 #test code
@@ -35,7 +68,7 @@ santas << Santa.new("gender fluid", "Mystical Creature (unicorn)")
 santas << Santa.new("N/A", "N/A")
 
 
-# Add some diverse initializations to your file as driver code
+# Add some diverse initializations as driver code with a loop
 genders =["Cisgender","Androgyne","Nonconforming", "Transpecies"]
 ethnicity =["Native Hawaiian", "Native American", "Aboriginal", "Gerald Broflovski(dolphin)"]
 
@@ -43,8 +76,36 @@ genders.length.times do |i|
   santas << Santa.new(genders[i], ethnicity[i])
 end
 
-# This is just here to see whats going on
-santas.each do |santa|
-  p santa
-  puts"\n-------------------------\n"
+# Prettyer santa print out (still kinda ugly but readable enough for tests)
+# santas.each do |santa|
+#   p santa
+#   puts "-----------------"
+# end
+
+
+# function to print tests
+def tester(santas)
+  puts "\n-------------------------\n"
+  p santas[0]
 end
+
+# Test birthday
+# tester(santas)
+# santas[0].celebrate_birthday
+# tester(santas)
+
+#test deer to last place
+# tester(santas)
+# santas[0].get_mad_at("Dancer")
+# tester(santas)
+
+#test gender changer
+# tester(santas)
+# santas[0].new_gender = "male"
+# tester(santas)
+
+#Test age and ethnicity
+tester(santas)
+p santas[0].age
+p santas[0].ethnicity
+
