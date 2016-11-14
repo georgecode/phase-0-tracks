@@ -55,4 +55,4 @@ describe Guessing_game do
   end
 
 
-end#describe Guessing_game
+end#end describe Guessing_game
