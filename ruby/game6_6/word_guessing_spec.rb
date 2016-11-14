@@ -45,5 +45,9 @@ describe Guessing_game do
     expect(game.limit_met(limit,array)).to eq false
   end
 
+  it "returns the final message" do
+    expect(game.final_message(0,"hello")).to eq "You guessed hello you're correct!!"
+  end
+
 
 end#describe Guessing_game

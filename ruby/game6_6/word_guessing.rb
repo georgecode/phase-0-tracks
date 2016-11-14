@@ -49,4 +49,12 @@ class Guessing_game
     end
   end
 
+  def final_message(limit,user_guess)
+    if limit != 0
+      p "YOU LOSE! Better luck next time"
+    else
+       p "You guessed #{user_guess} you're correct!!"
+    end
+  end
+
 end#end Guessing_game
