@@ -25,5 +25,28 @@ class Guessing_game
     array << guess
   end
 
+  def add_letter(word,guess,hint)
+    count = 0
+    word.map do |letter|
+      if letter == guess
+        hint[count]= letter
+        # p under_scores
+      end
+      count += 1
+    end #end word.map
+    hint
+  end #end add_letter
+
+  def guess_limit
+    (@word.length / 2.to_f).ceil
+  end
+
+  def limit_met(limit,array)
+    if limit >= array.length
+      false
+    else
+      true
+    end
+  end
 
 end#end Guessing_game

@@ -28,4 +28,22 @@ describe Guessing_game do
     expect(game.push_guess(test_array,"foo")).to eq ["test","foo"]
   end
 
+  it "up dates word hint with guess" do
+    word = ["f","o","o","b","a","r"]
+    hint = ["_","_","_","_","_","_"]
+    guess = "o"
+    expect(game.add_letter(word,guess,hint)).to eq ["_","o","o","_","_","_"]
+  end
+
+  it "returns guess limit" do
+    expect(game.guess_limit).to eq 3
+  end
+
+  it "check to see if limit is met" do
+      limit = 4
+      array =["x","y","z"]
+    expect(game.limit_met(limit,array)).to eq false
+  end
+
+
 end#describe Guessing_game
