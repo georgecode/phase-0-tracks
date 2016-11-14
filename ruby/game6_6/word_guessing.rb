@@ -2,8 +2,28 @@
 
 class Guessing_game
 
-  def test
-    "test"
+  # def test
+  #   "test"
+  # end
+  def initialize(word)
+    @word =word
   end
 
-end
+  def word_input
+    @word
+  end
+
+  def word_array
+    @word.split('')
+  end
+
+  def hint
+    @word.split("").map{|x| "_ "}
+  end
+
+  def push_guess(array, guess)
+    array << guess
+  end
+
+
+end#end Guessing_game
