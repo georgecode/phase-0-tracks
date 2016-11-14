@@ -5,9 +5,6 @@ require_relative 'word_guessing'
 describe Guessing_game do
   let(:game) {Guessing_game.new("hello")}
 
-  # it "returns test" do
-  #   expect(game.test).to eq "test"
-  # end
 
   it "returns word" do
     expect(game.word_input).to eq "hello"
@@ -23,10 +20,12 @@ describe Guessing_game do
     expect(game.hint).to eq ["_ ","_ ","_ ","_ ","_ "]
   end
 
+
   it "pushes guess to an array" do
     test_array = ["test"]
     expect(game.push_guess(test_array,"foo")).to eq ["test","foo"]
   end
+
 
   it "up dates word hint with guess" do
     word = ["f","o","o","b","a","r"]
@@ -35,20 +34,17 @@ describe Guessing_game do
     expect(game.add_letter(word,guess,hint)).to eq ["_","o","o","_","_","_"]
   end
 
+
   it "returns guess limit" do
     expect(game.guess_limit).to eq 3
   end
+
 
   it "returns true or false for repeated words" do
     array_guesses= ["a","b","c"]
     expect(game.repeat_checker(array_guesses,"b")).to eq true
   end
 
-  # it "check to see if limit is met" do
-  #     limit = 4
-  #     array =["x","y","z"]
-  #   expect(game.limit_met(limit,array)).to eq false
-  # end
 
   it "returns the final message" do
     expect(game.final_message(0,"hello")).to eq "You guessed hello you're correct!!"

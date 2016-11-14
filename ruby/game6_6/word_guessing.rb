@@ -1,11 +1,8 @@
 # :> ruby word_guessing.rb
 
-
 class Guessing_game
   attr_reader :word
-  # def test
-  #   "test"
-  # end
+
   def initialize(word)
     @word =word
   end
@@ -31,7 +28,6 @@ class Guessing_game
     word.map do |letter|
       if letter == guess
         hint[count]= letter
-        # p under_scores
       end
       count += 1
     end #end word.map
@@ -42,20 +38,9 @@ class Guessing_game
     (@word.length / 2.to_f).ceil
   end
 
-  ###change to array_guesses
   def repeat_checker(array,guess)
     array.include?(guess)
-      # a = [ "a", "b", "c" ]
-      # a.include?("b")   #=> true
   end
-
-  # def limit_met(limit,array)
-  #   if limit >= array.length
-  #     false
-  #   else
-  #     true
-  #   end
-  # end
 
   def final_message(limit,user_guess)
     if limit != 0
@@ -65,12 +50,12 @@ class Guessing_game
     end
   end
 
-end#end Guessing_game
+end#end Guessing_game class
 
 
 
 
-#driver code
+#Method for player one
 def player_one_prompt
   puts "Type the word you want your opponent to guess and hit enter"
   zword = gets.chomp
@@ -78,28 +63,8 @@ def player_one_prompt
   game
 end
 
-#game = player_one_prompt()
 
-#game = Guessing_game.new("xxxhellox")
-
-#game = Guessing_game.new("xxxhellox")
-# puts game.word
-# guess.print_word
-# p game.hint
-
-
-
-#def set_constants(game)
-
-#end
-
-#p set_constants(game)
-
-
-
-
-
-# while game.limit_met(limit,array) == false
+# Method for player 2
 def player_two_guess(game,limit, array_guesses,word,hint)
   while limit > array_guesses.length
 
@@ -115,18 +80,22 @@ def player_two_guess(game,limit, array_guesses,word,hint)
       unless game.repeat_checker(array_guesses,user_guess)
         game.add_letter(word,user_guess,hint)
         array_guesses<<user_guess
-        end#end unless
+        end
+
         try_left = limit-array_guesses.length
+
         puts "\nNumber of trys left #{try_left}"
     end#end if else
   end#end while
   game.final_message(limit,user_guess)
 end#player_two_guess
 
+# Sets games variables
   game = player_one_prompt()
   limit = game.guess_limit
   array_guesses =[]
   word = game.word_array
   hint = game.hint
 
+#driver code
 player_two_guess(game,limit, array_guesses,word,hint)
