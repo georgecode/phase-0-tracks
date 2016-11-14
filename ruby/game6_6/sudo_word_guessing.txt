@@ -1,0 +1,41 @@
+Word_guess
+1- initialize method
+input: word
+output: set @word=word
+
+2- word_array method
+steps: split word into an array
+output: an array of the word
+
+3- hint method
+steps: create an array of blank dashes based on the word_array length
+output: an array with the same number of “_ “as the word_array has objects
+
+4- push_guess method
+input: a guesses array (created in the driver code), and a guess
+steps: push the guess to the array
+
+5- add_letter method
+input: word guess and the hint
+steps: check if a guess is in the word_array if so add that letter to the hint
+output: the updated hint
+
+6- guess_limit method
+steps: divide the word_array length by 2 and round up
+output: the guessing limit
+
+7- repeat_checker method
+input: array of guesses and your guess
+steps: check to see if the array of guesses contains your guess
+output: true or false
+
+8- limit_met method
+input: limit and guesses_array
+steps: check to see if limit was met
+output: true or false
+
+
+9- final_messageinput:
+input: limit, user_guess
+steps: conditional to check the limit
+output: a win or lose
