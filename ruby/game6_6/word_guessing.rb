@@ -1,5 +1,6 @@
 # :> ruby word_guessing.rb
 
+
 class Guessing_game
   attr_reader :word
   # def test
@@ -67,6 +68,8 @@ class Guessing_game
 end#end Guessing_game
 
 
+
+
 #driver code
 def player_one_prompt
   puts "Type the word you want your opponent to guess and hit enter"
@@ -75,7 +78,7 @@ def player_one_prompt
   game
 end
 
-game = player_one_prompt()
+#game = player_one_prompt()
 
 #game = Guessing_game.new("xxxhellox")
 
@@ -87,36 +90,43 @@ game = player_one_prompt()
 
 
 #def set_constants(game)
-  limit = game.guess_limit
-  array_guesses =[]
-  word = game.word_array
-  hint = game.hint
+
 #end
 
-#set_constants(game)
+#p set_constants(game)
 
 
 
 
 
 # while game.limit_met(limit,array) == false
-while limit > array_guesses.length
+def player_two_guess(game,limit, array_guesses,word,hint)
+  while limit > array_guesses.length
 
-  puts "Guess the word or a letter"
+    puts "Guess the word or a letter"
 
-  puts hint.join('')
+    puts hint.join('')
 
-  user_guess = gets.chomp
+    user_guess = gets.chomp
 
-  if user_guess == word.join('')
-      limit = 0
-  else
-    unless game.repeat_checker(array_guesses,user_guess)
-      game.add_letter(word,user_guess,hint)
-      array_guesses<<user_guess
-      end#end unless
-      try_left = limit-array_guesses.length
-      puts "\nNumber of trys left #{try_left}"
-  end#end if else
-end#end while
-game.final_message(limit,user_guess)
+    if user_guess == word.join('')
+        limit = 0
+    else
+      unless game.repeat_checker(array_guesses,user_guess)
+        game.add_letter(word,user_guess,hint)
+        array_guesses<<user_guess
+        end#end unless
+        try_left = limit-array_guesses.length
+        puts "\nNumber of trys left #{try_left}"
+    end#end if else
+  end#end while
+  game.final_message(limit,user_guess)
+end#player_two_guess
+
+  game = player_one_prompt()
+  limit = game.guess_limit
+  array_guesses =[]
+  word = game.word_array
+  hint = game.hint
+
+player_two_guess(game,limit, array_guesses,word,hint)
