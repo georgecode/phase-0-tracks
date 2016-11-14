@@ -39,11 +39,16 @@ describe Guessing_game do
     expect(game.guess_limit).to eq 3
   end
 
-  it "check to see if limit is met" do
-      limit = 4
-      array =["x","y","z"]
-    expect(game.limit_met(limit,array)).to eq false
+  it "returns true or false for repeated words" do
+    array_guesses= ["a","b","c"]
+    expect(game.repeat_checker(array_guesses,"b")).to eq true
   end
+
+  # it "check to see if limit is met" do
+  #     limit = 4
+  #     array =["x","y","z"]
+  #   expect(game.limit_met(limit,array)).to eq false
+  # end
 
   it "returns the final message" do
     expect(game.final_message(0,"hello")).to eq "You guessed hello you're correct!!"

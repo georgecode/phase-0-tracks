@@ -1,7 +1,7 @@
 # :> ruby word_guessing.rb
 
 class Guessing_game
-
+  attr_reader :word
   # def test
   #   "test"
   # end
@@ -41,13 +41,20 @@ class Guessing_game
     (@word.length / 2.to_f).ceil
   end
 
-  def limit_met(limit,array)
-    if limit >= array.length
-      false
-    else
-      true
-    end
+  ###change to array_guesses
+  def repeat_checker(array,guess)
+    array.include?(guess)
+      # a = [ "a", "b", "c" ]
+      # a.include?("b")   #=> true
   end
+
+  # def limit_met(limit,array)
+  #   if limit >= array.length
+  #     false
+  #   else
+  #     true
+  #   end
+  # end
 
   def final_message(limit,user_guess)
     if limit != 0
@@ -58,3 +65,48 @@ class Guessing_game
   end
 
 end#end Guessing_game
+
+
+#driver code
+  game = Guessing_game.new("xxxhellox")
+
+game = Guessing_game.new("xxxhellox")
+puts game.word
+# guess.print_word
+# p game.hint
+limit = game.guess_limit
+array_guesses =[]
+word = game.word_array
+hint = game.hint
+
+
+# while game.limit_met(limit,array) == false
+while limit > array_guesses.length
+
+  puts "Guess the word or a letter"
+  puts hint.join('')
+  user_guess = gets.chomp
+  if user_guess == word.join('')
+      # p "You guessed #{user_guess} you're correct!!"
+      limit = 0
+  else
+    unless game.repeat_checker(array_guesses,user_guess)
+      game.add_letter(word,user_guess,hint)
+      array_guesses<<user_guess
+      end#end unless
+      try_left = limit-array_guesses.length
+      puts "\nNumber of trys left #{try_left}"
+  end#end if else
+end#end while
+# p limit
+
+
+# def final_message(limit,user_guess)
+#   if limit != 0
+#     p "YOU LOSE! Better luck next time"
+#   else
+#      p "You guessed #{user_guess} you're correct!!"
+#   end
+# end
+# final_message(limit,user_guess)
+game.final_message(limit,user_guess)
