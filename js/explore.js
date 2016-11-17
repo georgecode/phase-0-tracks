@@ -7,5 +7,26 @@
 4. join the new array
 5. output the new array*/
 
+/*Very ugly example, but what the assignment asked for*/
+var reverser_ugly = function(str){
+  strArr = str.split('')
+  var newStr =[]
+  strArrLength = strArr.length
 
+  for(var i=0;i<strArrLength;i++){
+    newStr.push(strArr.pop())
+  }
+  return newStr.join('')
+}
+
+console.log(reverser_ugly("ugly way"))
+
+
+
+/*Eloquent way*/
+function reverse_eloquent(str){
+return str.split('').reverse().join('')
+}
+
+console.log(reverse_eloquent("eloquent way"))
 
