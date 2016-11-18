@@ -60,3 +60,7 @@ function matchChecker(obj1,obj2){
 
 //Driver for test
 console.log(matchChecker(obj1,obj2))
+
+var obj1Fail = {name: "Steven", age: 51, weight:100};
+var obj2Fail ={name: "Tamir", age: 54, weight:120};
+console.log(matchChecker(obj1Fail,obj2Fail))
