@@ -32,16 +32,21 @@ class VirusPredictor
  # 2. set the number of deaths to a rounded percentages of the population based on population_density
 
  # 3. returns print a string with estimations of the number of deaths for a given state
+
   def predicted_deaths(population_density, population, state)
     # predicted deaths is solely based on population density
+  def death_percentage(num)
+    number_of_deaths = (@population * num).floor
+  end
+
     if @population_density >= 200
-      number_of_deaths = (@population * 0.4).floor
+      death_percentage(0.4)
     elsif @population_density >= 150
-      number_of_deaths = (@population * 0.3).floor
+      death_percentage(0.3)
     elsif @population_density >= 100
-      number_of_deaths = (@population * 0.2).floor
+      death_percentage(0.2)
     elsif @population_density >= 50
-      number_of_deaths = (@population * 0.1).floor
+      death_percentage(0.1)
     else
       number_of_deaths = (@population * 0.05).floor
     end
