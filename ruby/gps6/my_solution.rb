@@ -113,3 +113,26 @@ alaska.virus_effects
 # Reflection Section
 
 all_50_states(STATE_DATA)
+
+
+# # commented reflection section
+# What are the differences between the two different hash syntaxes shown in the state_data file?
+# ----"Alabama" => {population_density: 94.65, population: 4822023}
+# for this example you need to use => because you are useing the string "Alabama"as a key, however for population you can use : notation because population is a symbole
+
+# What does require_relative do? How is it different from require?
+# ---require_relative-  imports file from same root directory.
+#     require - used for importing gems and librarys.
+
+# What are some ways to iterate through a hash?
+# ---each do , while loop, for loop
+
+# When refactoring virus_effects, what stood out to you about the variables, if anything?
+# ---This was the refactor that really threw us off,
+#     The oly refactor we could come up with was,
+#     to pass all the arguments in instead of
+#     calling @ every time but when we tried it, into actually made
+#     the code uglier
+
+# What concept did you most solidify in this challenge?
+# -- the thing i learned most was require_relative and require, and when you would each
