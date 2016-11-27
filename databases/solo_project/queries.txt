@@ -37,6 +37,9 @@ sqlite> SELECT * FROM listings, cities WHERE listings.city_id = cities.id;
 
 4. Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
 
+--**not sure what this question wanted so I added the two different things I thought it was asking for.
+
+--**first solution
 sqlite> SELECT listings.address, listings.bedrooms, listings.bathrooms, listings.ocean_front, cities.city FROM listings JOIN cities ON listings.city_id = cities.id;
 Carr. 4411,Bo Atalaya|5|3|true|Aguada
 Carr. 413, Bo Puntas|10|3|false|Rincon
@@ -46,6 +49,14 @@ Carr. 429, Bo Los Almendros|6|6|true|Rincon
 Carr. 401,Tres Hermanos Blvd|3|2|false|Aguada
 Carr. 115, Bo Palatine|4|2|false|Moca
 
+--**second solution
+sqlite> SELECT listings.address, cities.city FROM listings JOIN cities ON listings.city_id = cities.id;
+Carr. 4411,Bo Atalaya|Aguada
+Carr. 413, Bo Puntas|Rincon
+Carr. 4409, Bo Naranjo|Moca
+Carr. 429, Calle Bastia|Rincon
+Carr. 429, Bo Los Almendros|Rincon
+Carr. 401,Tres Hermanos Blvd|Aguada
 
 5. Delete an item that meets some condition (you can choose a condition that makes sense).
 
@@ -59,7 +70,36 @@ Carr. 429, Bo Los Almendros|6|6|true|Rincon
 Carr. 401,Tres Hermanos Blvd|3|2|false|Aguada
 
 
+--*******************************
+Release 3
+
+1. CROSS JOIN
+
+sqlite> SELECT address, bedrooms, bathrooms FROM listings CROSS JOIN cities;
+Carr. 4411,Bo Atalaya|5|3
+Carr. 4411,Bo Atalaya|5|3
+Carr. 4411,Bo Atalaya|5|3
+Carr. 413, Bo Puntas|10|3
+Carr. 413, Bo Puntas|10|3
+Carr. 413, Bo Puntas|10|3
+Carr. 4409, Bo Naranjo|6|4
+Carr. 4409, Bo Naranjo|6|4
+Carr. 4409, Bo Naranjo|6|4
+Carr. 429, Calle Bastia|2|1
+Carr. 429, Calle Bastia|2|1
+Carr. 429, Calle Bastia|2|1
+Carr. 429, Bo Los Almendros|6|6
+Carr. 429, Bo Los Almendros|6|6
+Carr. 429, Bo Los Almendros|6|6
+Carr. 401,Tres Hermanos Blvd|3|2
+Carr. 401,Tres Hermanos Blvd|3|2
+Carr. 401,Tres Hermanos Blvd|3|2
 
 
+2. INNER JOIN
 
-
+sqlite> SELECT address, bedrooms, bathrooms FROM listings INNER JOIN cities ON listings.bathrooms = cities.id;
+Carr. 4411,Bo Atalaya|5|3
+Carr. 413, Bo Puntas|10|3
+Carr. 429, Calle Bastia|2|1
+Carr. 401,Tres Hermanos Blvd|3|2
