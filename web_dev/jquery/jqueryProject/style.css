@@ -1,3 +1,21 @@
-body{
-  color:red;
+.blogPost{
+  margin-top: 10px;
+  width: 80%;
+  margin-left: 10px;
+  min-height:60px;
+  border: 1px black solid;
+  border-radius: 10px;
+  padding:10px;
+
+}
+
+/*#blogInput{
+  width:40%;
+  height:200px;
+  margin-left: 20px;
+}*/
+
+em{
+  font-style: normal;
+  font-weight: bold;
 }
