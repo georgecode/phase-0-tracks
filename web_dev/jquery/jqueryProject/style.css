@@ -1,0 +1,15 @@
+.blogPost{
+  margin-top: 10px;
+  width: 80%;
+  margin-left: 10px;
+  min-height:60px;
+  border: 1px black solid;
+  border-radius: 10px;
+  padding:10px;
+
+}
+
+em{
+  font-style: normal;
+  font-weight: bold;
+}
