@@ -1,3 +1,4 @@
+// project with al musavi and george czurlanis
 console.log("hello jkashdklfjahsdhflalhjsdf");
 
 var par = document.getElementsByTagName("p")[0];
