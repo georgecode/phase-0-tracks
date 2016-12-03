@@ -29,5 +29,5 @@ get '/student/name' do
   @students = db.execute("SELECT * FROM students")
   erb :student_name
 end
-
+# github not updating test
 
